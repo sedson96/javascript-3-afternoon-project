@@ -88,28 +88,28 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
 */
 
 //Code Here
-function removeDuplicates(){
-  for (let i = 0; i < workplaceAccidents.length; i++){
-    if (workplaceAccidents.indexOf(workplaceAccidents[i] === workplaceAccidents[i + 1])) {
-      workplaceAccidents.splice(workplaceAccidents[i],1)
-
-    }
-  }
-  return workplaceAccidents
-}
-
-
 // function removeDuplicates(){
 //   for (let i = 0; i < workplaceAccidents.length; i++){
-//     for(let k = i + 1; k < workplaceAccidents.length; k++){
-//       if(workplaceAccidents[i] === workplaceAccidents[k]){
-//         workplaceAccidents.splice(k,1)
-//       }
-//     }
+//     if (workplaceAccidents.indexOf(workplaceAccidents[i] === workplaceAccidents[i + 1])) {
+//       workplaceAccidents.splice(workplaceAccidents[i],1)
 
 //     }
-//     return workplaceAccidents
 //   }
+//   return workplaceAccidents
+// }
+
+
+function removeDuplicates(){
+  for (let i = 0; i < workplaceAccidents.length; i++){
+    for(let k = i + 1; k < workplaceAccidents.length; k++){
+      if(workplaceAccidents[i] === workplaceAccidents[k]){
+        workplaceAccidents.splice(k,1)
+      }
+    }
+
+    }
+    return workplaceAccidents
+  }
 
 
 
