@@ -40,7 +40,11 @@
 */
 
 function showValues( obj ) {
-  //Code Here
+  let all= "";
+  for(let key in obj){
+    all = all + obj[key];
+  }
+  return all
 }
 
 
@@ -55,7 +59,14 @@ function showValues( obj ) {
 
 //Code Here
 
-
+function greaterThan10(obj){
+  for(let key in obj){
+    if(obj[key] > 10){
+      obj[key] = 0
+    }
+  }
+  return obj;
+}
 
 ////////// PROBLEM 3 //////////
 
@@ -66,6 +77,12 @@ function showValues( obj ) {
 */
 
 //Code Here
+let double = (obj) => {
+  for(let key in obj){
+    obj[key] *= 2;
+  }
+  return obj;
+}
 
 
 
@@ -78,8 +95,17 @@ function showValues( obj ) {
   If the property name starts with an 'sh', concatenate the value to the string variable.
   By the end of the for in loop, you should have a sentence, return that sentence.
 */
-
+// substring 
 //Code Here
+let secrets = (obj) => {
+  let sentence = "";
+  for (let key in obj){
+    if (key.substr(0,2) === "sh" ){
+      sentence = sentence + obj[key]
+    }
+  }
+  return sentence;
+}
 
 
 
@@ -112,6 +138,10 @@ function showValues( obj ) {
 
 //Code Here
 
+function removePassword(obj){
+  delete obj.password;
+  return obj;
+}
 
 
 ////////// PROBLEM 6 //////////
@@ -130,9 +160,12 @@ var deleteTheBigNumbers = {
 */
 
 //Code Here
+  for(let key in deleteTheBigNumbers){
+    if (deleteTheBigNumbers[key] > 100 ){
+     delete deleteTheBigNumbers[key];
+  }
 
-
-
+  }
 ////////// PROBLEM 7 //////////
 
 /*
@@ -143,7 +176,14 @@ var deleteTheBigNumbers = {
 */
 
 //Code Here
-
+function startsWithK(obj) {
+  for(let key in obj) {
+    if(key.substr(0,1) === "k"){
+      delete obj[key];
+    }
+  }
+  return obj
+}
 
 
 ////////// PROBLEM 8 //////////
@@ -158,5 +198,12 @@ var deleteTheBigNumbers = {
 */
 
 //Code Here
-
+function hiddenTreasure(obj){
+  for(let key in obj){
+    if (!obj[key].includes("treasure")){
+      delete obj[key];
+    }
+  }
+  return obj
+}
 
